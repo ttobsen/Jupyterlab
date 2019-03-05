@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  jupyterlab:
+    image: 'jupyterlab'
+    container_name: jupyterlab
+    hostname: 'jupyterlab'
+    ports:
+      - '8888:8888'
+    volumes:
+      - './jupyter:/home/jupyter/work'
+    command: jupyter lab --ip=jupyterlab
+ 
