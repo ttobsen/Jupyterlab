@@ -2,12 +2,13 @@ version: '2'
 
 services:
   jupyterlab:
-    image: 'jupyterlab:latest'
+    image: 'elpra/jupyterlab:latest'
     container_name: jupyterlab
     hostname: 'localhost'
     ports:
       - '8888:8888'
     volumes:
       - './jupyter:/home/jupyter/work'
-    command: jupyter lab --ip=0.0.0.0
+      - './jupyter_notebook_config.json:/etc/jupyter/jupyter_notebook_config.json'
+    command: jupyter lab --ip=0.0.0.0 --config=/etc/jupyter/jupyter_notebook_config.json
  

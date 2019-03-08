@@ -14,7 +14,7 @@ RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh &
 ENV PATH="/home/jupyter/miniconda3/bin:${PATH}"
 
 RUN conda update -n base -c defaults conda
-RUN conda install -c conda-forge -y jupyterlab nodejs nbconvert notebook matplotlib scipy imageio ipython pillow ipywidgets
+RUN conda install -c conda-forge -y jupyterlab nodejs nbconvert notebook jupytext matplotlib scipy imageio ipython pillow ipywidgets
 RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager
 
 RUN jupyter lab paths
